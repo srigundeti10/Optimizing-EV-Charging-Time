@@ -1,0 +1,2208 @@
+<FluentXMLReport>
+<version>
+Fluent
+Version: 3d, dp, pbns, ske, transient (3d, double precision, pressure-based, standard k-epsilon, transient)
+Release: 23.2.0
+Title: 
+</version>
+
+<Models>
+
+Models
+------
+
+   Model                        Settings                              
+   ----------------------------------------------------------------
+   Space                        3D                                    
+   Time                         Unsteady, 1st-Order Implicit          
+   Viscous                      Standard k-epsilon turbulence model   
+   Wall Treatment               Enhanced Wall Treatment               
+   Heat Transfer                Enabled                               
+   Solidification and Melting   Disabled                              
+   Radiation                    None                                  
+   Species                      Disabled                              
+   Coupled Dispersed Phase      Disabled                              
+   NOx Pollutants               Disabled                              
+   SOx Pollutants               Disabled                              
+   Soot                         Disabled                              
+   Mercury Pollutants           Disabled                              
+   Structure                    Disabled                              
+   Acoustics                    Disabled                              
+   Eulerian Wall Film           Disabled                              
+   Potential/Electrochemistry   Disabled                              
+   Multiphase                   Disabled                              
+
+</Models>
+
+<MaterialProperties>
+Material Properties
+-------------------
+
+   Material: nickel (solid)
+
+      Property               Units      Method     Value(s)   
+      -----------------------------------------------------
+      Density                kg/m^3     constant   8900       
+      Cp (Specific Heat)     J/(kg K)   constant   460.6      
+      Thermal Conductivity   W/(m K)    constant   91.74      
+
+   Material: air (fluid)
+
+      Property               Units      Method     Value(s)     
+      -------------------------------------------------------
+      Density                kg/m^3     constant   1.225        
+      Cp (Specific Heat)     J/(kg K)   constant   1006.43      
+      Thermal Conductivity   W/(m K)    constant   0.0242       
+      Viscosity              kg/(m s)   constant   1.7894e-05   
+      Molecular Weight       kg/kmol    constant   28.966       
+
+   Material: aluminum (solid)
+
+      Property               Units      Method     Value(s)   
+      -----------------------------------------------------
+      Density                kg/m^3     constant   2719       
+      Cp (Specific Heat)     J/(kg K)   constant   871        
+      Thermal Conductivity   W/(m K)    constant   202.4      
+
+</MaterialProperties>
+
+<CellZoneConditions>
+Cell Zone Conditions
+--------------------
+
+   Zones
+
+      name         id   type    
+      -----------------------
+      cell         4    solid   
+      fluid_zone   5    fluid   
+
+   Setup Conditions
+
+      cell
+
+         Condition       Value      
+         ------------------------
+         Material Name   aluminum   
+         Frame Motion?   no         
+         Mesh Motion?    no         
+
+      fluid_zone
+
+         Condition       Value   
+         ---------------------
+         Frame Motion?   no      
+         Mesh Motion?    no      
+
+</CellZoneConditions>
+
+<BoundaryConditions>
+Boundary Conditions
+-------------------
+
+   Zones
+
+      name                              id    type              
+      -------------------------------------------------------
+      wall-196-shadow                   248   wall              
+      wall-196                          196   wall              
+      wall-197-shadow                   247   wall              
+      wall-197                          197   wall              
+      wall-191-shadow                   246   wall              
+      wall-191                          191   wall              
+      wall-192-shadow                   245   wall              
+      wall-192                          192   wall              
+      wall-186-shadow                   244   wall              
+      wall-186                          186   wall              
+      wall-187-shadow                   243   wall              
+      wall-187                          187   wall              
+      wall-181-shadow                   242   wall              
+      wall-181                          181   wall              
+      wall-182-shadow                   241   wall              
+      wall-182                          182   wall              
+      wall-176-shadow                   240   wall              
+      wall-176                          176   wall              
+      wall-177-shadow                   239   wall              
+      wall-177                          177   wall              
+      wall-171-shadow                   238   wall              
+      wall-171                          171   wall              
+      wall-172-shadow                   237   wall              
+      wall-172                          172   wall              
+      wall-166-shadow                   236   wall              
+      wall-166                          166   wall              
+      wall-167-shadow                   235   wall              
+      wall-167                          167   wall              
+      wall-161-shadow                   234   wall              
+      wall-161                          161   wall              
+      wall-162-shadow                   233   wall              
+      wall-162                          162   wall              
+      wall-156-shadow                   232   wall              
+      wall-156                          156   wall              
+      wall-157-shadow                   231   wall              
+      wall-157                          157   wall              
+      wall-151-shadow                   230   wall              
+      wall-151                          151   wall              
+      wall-152-shadow                   229   wall              
+      wall-152                          152   wall              
+      wall-146-shadow                   228   wall              
+      wall-146                          146   wall              
+      wall-147-shadow                   227   wall              
+      wall-147                          147   wall              
+      wall-141-shadow                   226   wall              
+      wall-141                          141   wall              
+      wall-142-shadow                   225   wall              
+      wall-142                          142   wall              
+      wall-136-shadow                   224   wall              
+      wall-136                          136   wall              
+      wall-137-shadow                   223   wall              
+      wall-137                          137   wall              
+      wall-131-shadow                   222   wall              
+      wall-131                          131   wall              
+      wall-132-shadow                   221   wall              
+      wall-132                          132   wall              
+      wall-126-shadow                   220   wall              
+      wall-126                          126   wall              
+      wall-127-shadow                   219   wall              
+      wall-127                          127   wall              
+      wall-121-shadow                   218   wall              
+      wall-121                          121   wall              
+      wall-122-shadow                   217   wall              
+      wall-122                          122   wall              
+      wall-116-shadow                   216   wall              
+      wall-116                          116   wall              
+      wall-117-shadow                   215   wall              
+      wall-117                          117   wall              
+      wall-111-shadow                   214   wall              
+      wall-111                          111   wall              
+      wall-112-shadow                   213   wall              
+      wall-112                          112   wall              
+      wall-106-shadow                   212   wall              
+      wall-106                          106   wall              
+      wall-107-shadow                   211   wall              
+      wall-107                          107   wall              
+      wall-101-shadow                   210   wall              
+      wall-101                          101   wall              
+      wall-102-shadow                   209   wall              
+      wall-102                          102   wall              
+      wall-96-shadow                    208   wall              
+      wall-96                           96    wall              
+      wall-97-shadow                    207   wall              
+      wall-97                           97    wall              
+      wall-91-shadow                    206   wall              
+      wall-91                           91    wall              
+      wall-92-shadow                    205   wall              
+      wall-92                           92    wall              
+      wall-86-shadow                    204   wall              
+      wall-86                           86    wall              
+      wall-87-shadow                    203   wall              
+      wall-87                           87    wall              
+      wall-7-shadow                     202   wall              
+      wall-7                            7     wall              
+      wall-82-shadow                    201   wall              
+      wall-82                           82    wall              
+      wall-200                          200   wall              
+      wall-199                          199   wall              
+      wall-198                          198   wall              
+      wall-195                          195   wall              
+      wall-194                          194   wall              
+      wall-193                          193   wall              
+      wall-190                          190   wall              
+      wall-189                          189   wall              
+      wall-188                          188   wall              
+      wall-185                          185   wall              
+      wall-184                          184   wall              
+      wall-183                          183   wall              
+      wall-180                          180   wall              
+      wall-179                          179   wall              
+      wall-178                          178   wall              
+      wall-175                          175   wall              
+      wall-174                          174   wall              
+      wall-173                          173   wall              
+      wall-170                          170   wall              
+      wall-169                          169   wall              
+      wall-168                          168   wall              
+      wall-165                          165   wall              
+      wall-164                          164   wall              
+      wall-163                          163   wall              
+      wall-160                          160   wall              
+      wall-159                          159   wall              
+      wall-158                          158   wall              
+      wall-155                          155   wall              
+      wall-154                          154   wall              
+      wall-153                          153   wall              
+      wall-150                          150   wall              
+      wall-149                          149   wall              
+      wall-148                          148   wall              
+      wall-145                          145   wall              
+      wall-144                          144   wall              
+      wall-143                          143   wall              
+      wall-140                          140   wall              
+      wall-139                          139   wall              
+      wall-138                          138   wall              
+      wall-135                          135   wall              
+      wall-134                          134   wall              
+      wall-133                          133   wall              
+      wall-130                          130   wall              
+      wall-129                          129   wall              
+      wall-128                          128   wall              
+      wall-125                          125   wall              
+      wall-124                          124   wall              
+      wall-123                          123   wall              
+      wall-120                          120   wall              
+      wall-119                          119   wall              
+      wall-118                          118   wall              
+      wall-115                          115   wall              
+      wall-114                          114   wall              
+      wall-113                          113   wall              
+      wall-110                          110   wall              
+      wall-109                          109   wall              
+      wall-108                          108   wall              
+      wall-105                          105   wall              
+      wall-104                          104   wall              
+      wall-103                          103   wall              
+      wall-100                          100   wall              
+      wall-99                           99    wall              
+      wall-98                           98    wall              
+      wall-95                           95    wall              
+      wall-94                           94    wall              
+      wall-93                           93    wall              
+      wall-90                           90    wall              
+      wall-89                           89    wall              
+      wall-88                           88    wall              
+      wall-85                           85    wall              
+      wall-84                           84    wall              
+      wall-83                           83    wall              
+      wall-fluid_zone                   1     wall              
+      inlet                             8     velocity-inlet    
+      outlet                            9     pressure-outlet   
+      contact_region-src                10    interface         
+      contact_region-trg                11    interface         
+      cell_wall-contact_region-trg      12    interface         
+      contact_region_10-src             13    interface         
+      contact_region_10-trg             14    interface         
+      cell_wall-contact_region_10-trg   15    interface         
+      contact_region_11-src             16    interface         
+      contact_region_11-trg             17    interface         
+      cell_wall-contact_region_11-trg   18    interface         
+      contact_region_12-src             19    interface         
+      contact_region_12-trg             20    interface         
+      cell_wall-contact_region_12-trg   21    interface         
+      contact_region_13-src             22    interface         
+      contact_region_13-trg             23    interface         
+      cell_wall-contact_region_13-trg   24    interface         
+      contact_region_14-src             25    interface         
+      contact_region_14-trg             26    interface         
+      cell_wall-contact_region_14-trg   27    interface         
+      contact_region_15-src             28    interface         
+      contact_region_15-trg             29    interface         
+      cell_wall-contact_region_15-trg   30    interface         
+      contact_region_16-src             31    interface         
+      contact_region_16-trg             32    interface         
+      cell_wall-contact_region_16-trg   33    interface         
+      contact_region_17-src             34    interface         
+      contact_region_17-trg             35    interface         
+      cell_wall-contact_region_17-trg   36    interface         
+      contact_region_18-src             37    interface         
+      contact_region_18-trg             38    interface         
+      cell_wall-contact_region_18-trg   39    interface         
+      contact_region_19-src             40    interface         
+      contact_region_19-trg             41    interface         
+      cell_wall-contact_region_19-trg   42    interface         
+      contact_region_2-src              43    interface         
+      contact_region_2-trg              44    interface         
+      cell_wall-contact_region_2-trg    45    interface         
+      contact_region_20-src             46    interface         
+      contact_region_20-trg             47    interface         
+      cell_wall-contact_region_20-trg   48    interface         
+      contact_region_21-src             49    interface         
+      contact_region_21-trg             50    interface         
+      cell_wall-contact_region_21-trg   51    interface         
+      contact_region_22-src             52    interface         
+      contact_region_22-trg             53    interface         
+      cell_wall-contact_region_22-trg   54    interface         
+      contact_region_23-src             55    interface         
+      contact_region_23-trg             56    interface         
+      cell_wall-contact_region_23-trg   57    interface         
+      contact_region_24-src             58    interface         
+      contact_region_24-trg             59    interface         
+      cell_wall-contact_region_24-trg   60    interface         
+      contact_region_3-src              61    interface         
+      contact_region_3-trg              62    interface         
+      cell_wall-contact_region_3-trg    63    interface         
+      contact_region_4-src              64    interface         
+      contact_region_4-trg              65    interface         
+      cell_wall-contact_region_4-trg    66    interface         
+      contact_region_5-src              67    interface         
+      contact_region_5-trg              68    interface         
+      cell_wall-contact_region_5-trg    69    interface         
+      contact_region_6-src              70    interface         
+      contact_region_6-trg              71    interface         
+      cell_wall-contact_region_6-trg    72    interface         
+      contact_region_7-src              73    interface         
+      contact_region_7-trg              74    interface         
+      cell_wall-contact_region_7-trg    75    interface         
+      contact_region_8-src              76    interface         
+      contact_region_8-trg              77    interface         
+      cell_wall-contact_region_8-trg    78    interface         
+      contact_region_9-src              79    interface         
+      contact_region_9-trg              80    interface         
+      cell_wall-contact_region_9-trg    81    interface         
+
+   Setup Conditions
+
+      wall-196-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-196
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-197-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-197
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-191-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-191
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-192-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-192
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-186-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-186
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-187-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-187
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-181-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-181
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-182-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-182
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-176-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-176
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-177-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-177
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-171-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-171
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-172-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-172
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-166-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-166
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-167-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-167
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-161-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-161
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-162-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-162
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-156-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-156
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-157-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-157
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-151-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-151
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-152-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-152
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-146-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-146
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-147-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-147
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-141-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-141
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-142-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-142
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-136-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-136
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-137-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-137
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-131-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-131
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-132-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-132
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-126-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-126
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-127-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-127
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-121-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-121
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-122-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-122
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-116-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-116
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-117-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-117
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-111-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-111
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-112-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-112
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-106-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-106
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-107-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-107
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-101-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-101
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-102-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-102
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-96-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-96
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-97-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-97
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-91-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-91
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-92-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-92
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-86-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-86
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-87-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-87
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-7-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-7
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-82-shadow
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   Coupled    
+
+      wall-82
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Coupled           
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-200
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-199
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-198
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-195
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-194
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-193
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-190
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-189
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-188
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-185
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-184
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-183
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-180
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-179
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-178
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-175
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-174
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-173
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-170
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-169
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-168
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-165
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-164
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-163
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-160
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-159
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-158
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-155
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-154
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-153
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-150
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-149
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-148
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-145
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-144
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-143
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-140
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-139
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-138
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-135
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-134
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-133
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-130
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-129
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-128
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-125
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-124
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-123
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-120
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-119
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-118
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-115
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-114
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-113
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-110
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-109
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-108
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-105
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-104
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-103
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-100
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-99
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-98
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-95
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-94
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-93
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-90
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-89
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-88
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-85
+
+         Condition         Value       
+         ---------------------------
+         Material Name     aluminum    
+         Thermal BC Type   Heat Flux   
+
+      wall-84
+
+         Condition         Value         
+         -----------------------------
+         Thermal BC Type   Temperature   
+         Temperature [K]   333           
+
+      wall-83
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      wall-fluid_zone
+
+         Condition                  Value             
+         ------------------------------------------
+         Material Name              aluminum          
+         Thermal BC Type            Heat Flux         
+         Wall Motion                Stationary Wall   
+         Shear Boundary Condition   No Slip           
+
+      inlet
+
+         Condition                  Value   
+         --------------------------------
+         Velocity Magnitude [m/s]   1       
+
+      outlet
+
+         Condition   Value   
+         -----------------
+
+      contact_region-src
+
+         Condition   Value     
+         -------------------
+                     wall-83   
+
+      contact_region-trg
+
+         Condition   Value     
+         -------------------
+                     wall-85   
+
+      cell_wall-contact_region-trg
+
+         Condition   Value     
+         -------------------
+                     wall-84   
+
+      contact_region_10-src
+
+         Condition   Value     
+         -------------------
+                     wall-88   
+
+      contact_region_10-trg
+
+         Condition   Value     
+         -------------------
+                     wall-90   
+
+      cell_wall-contact_region_10-trg
+
+         Condition   Value     
+         -------------------
+                     wall-89   
+
+      contact_region_11-src
+
+         Condition   Value     
+         -------------------
+                     wall-93   
+
+      contact_region_11-trg
+
+         Condition   Value     
+         -------------------
+                     wall-95   
+
+      cell_wall-contact_region_11-trg
+
+         Condition   Value     
+         -------------------
+                     wall-94   
+
+      contact_region_12-src
+
+         Condition   Value     
+         -------------------
+                     wall-98   
+
+      contact_region_12-trg
+
+         Condition   Value      
+         --------------------
+                     wall-100   
+
+      cell_wall-contact_region_12-trg
+
+         Condition   Value     
+         -------------------
+                     wall-99   
+
+      contact_region_13-src
+
+         Condition   Value      
+         --------------------
+                     wall-103   
+
+      contact_region_13-trg
+
+         Condition   Value      
+         --------------------
+                     wall-105   
+
+      cell_wall-contact_region_13-trg
+
+         Condition   Value      
+         --------------------
+                     wall-104   
+
+      contact_region_14-src
+
+         Condition   Value      
+         --------------------
+                     wall-108   
+
+      contact_region_14-trg
+
+         Condition   Value      
+         --------------------
+                     wall-110   
+
+      cell_wall-contact_region_14-trg
+
+         Condition   Value      
+         --------------------
+                     wall-109   
+
+      contact_region_15-src
+
+         Condition   Value      
+         --------------------
+                     wall-113   
+
+      contact_region_15-trg
+
+         Condition   Value      
+         --------------------
+                     wall-115   
+
+      cell_wall-contact_region_15-trg
+
+         Condition   Value      
+         --------------------
+                     wall-114   
+
+      contact_region_16-src
+
+         Condition   Value      
+         --------------------
+                     wall-118   
+
+      contact_region_16-trg
+
+         Condition   Value      
+         --------------------
+                     wall-120   
+
+      cell_wall-contact_region_16-trg
+
+         Condition   Value      
+         --------------------
+                     wall-119   
+
+      contact_region_17-src
+
+         Condition   Value      
+         --------------------
+                     wall-123   
+
+      contact_region_17-trg
+
+         Condition   Value      
+         --------------------
+                     wall-125   
+
+      cell_wall-contact_region_17-trg
+
+         Condition   Value      
+         --------------------
+                     wall-124   
+
+      contact_region_18-src
+
+         Condition   Value      
+         --------------------
+                     wall-128   
+
+      contact_region_18-trg
+
+         Condition   Value      
+         --------------------
+                     wall-130   
+
+      cell_wall-contact_region_18-trg
+
+         Condition   Value      
+         --------------------
+                     wall-129   
+
+      contact_region_19-src
+
+         Condition   Value      
+         --------------------
+                     wall-133   
+
+      contact_region_19-trg
+
+         Condition   Value      
+         --------------------
+                     wall-135   
+
+      cell_wall-contact_region_19-trg
+
+         Condition   Value      
+         --------------------
+                     wall-134   
+
+      contact_region_2-src
+
+         Condition   Value      
+         --------------------
+                     wall-138   
+
+      contact_region_2-trg
+
+         Condition   Value      
+         --------------------
+                     wall-140   
+
+      cell_wall-contact_region_2-trg
+
+         Condition   Value      
+         --------------------
+                     wall-139   
+
+      contact_region_20-src
+
+         Condition   Value      
+         --------------------
+                     wall-143   
+
+      contact_region_20-trg
+
+         Condition   Value      
+         --------------------
+                     wall-145   
+
+      cell_wall-contact_region_20-trg
+
+         Condition   Value      
+         --------------------
+                     wall-144   
+
+      contact_region_21-src
+
+         Condition   Value      
+         --------------------
+                     wall-148   
+
+      contact_region_21-trg
+
+         Condition   Value      
+         --------------------
+                     wall-150   
+
+      cell_wall-contact_region_21-trg
+
+         Condition   Value      
+         --------------------
+                     wall-149   
+
+      contact_region_22-src
+
+         Condition   Value      
+         --------------------
+                     wall-153   
+
+      contact_region_22-trg
+
+         Condition   Value      
+         --------------------
+                     wall-155   
+
+      cell_wall-contact_region_22-trg
+
+         Condition   Value      
+         --------------------
+                     wall-154   
+
+      contact_region_23-src
+
+         Condition   Value      
+         --------------------
+                     wall-158   
+
+      contact_region_23-trg
+
+         Condition   Value      
+         --------------------
+                     wall-160   
+
+      cell_wall-contact_region_23-trg
+
+         Condition   Value      
+         --------------------
+                     wall-159   
+
+      contact_region_24-src
+
+         Condition   Value      
+         --------------------
+                     wall-163   
+
+      contact_region_24-trg
+
+         Condition   Value      
+         --------------------
+                     wall-165   
+
+      cell_wall-contact_region_24-trg
+
+         Condition   Value      
+         --------------------
+                     wall-164   
+
+      contact_region_3-src
+
+         Condition   Value      
+         --------------------
+                     wall-168   
+
+      contact_region_3-trg
+
+         Condition   Value      
+         --------------------
+                     wall-170   
+
+      cell_wall-contact_region_3-trg
+
+         Condition   Value      
+         --------------------
+                     wall-169   
+
+      contact_region_4-src
+
+         Condition   Value      
+         --------------------
+                     wall-173   
+
+      contact_region_4-trg
+
+         Condition   Value      
+         --------------------
+                     wall-175   
+
+      cell_wall-contact_region_4-trg
+
+         Condition   Value      
+         --------------------
+                     wall-174   
+
+      contact_region_5-src
+
+         Condition   Value      
+         --------------------
+                     wall-178   
+
+      contact_region_5-trg
+
+         Condition   Value      
+         --------------------
+                     wall-180   
+
+      cell_wall-contact_region_5-trg
+
+         Condition   Value      
+         --------------------
+                     wall-179   
+
+      contact_region_6-src
+
+         Condition   Value      
+         --------------------
+                     wall-183   
+
+      contact_region_6-trg
+
+         Condition   Value      
+         --------------------
+                     wall-185   
+
+      cell_wall-contact_region_6-trg
+
+         Condition   Value      
+         --------------------
+                     wall-184   
+
+      contact_region_7-src
+
+         Condition   Value      
+         --------------------
+                     wall-188   
+
+      contact_region_7-trg
+
+         Condition   Value      
+         --------------------
+                     wall-190   
+
+      cell_wall-contact_region_7-trg
+
+         Condition   Value      
+         --------------------
+                     wall-189   
+
+      contact_region_8-src
+
+         Condition   Value      
+         --------------------
+                     wall-193   
+
+      contact_region_8-trg
+
+         Condition   Value      
+         --------------------
+                     wall-195   
+
+      cell_wall-contact_region_8-trg
+
+         Condition   Value      
+         --------------------
+                     wall-194   
+
+      contact_region_9-src
+
+         Condition   Value      
+         --------------------
+                     wall-198   
+
+      contact_region_9-trg
+
+         Condition   Value      
+         --------------------
+                     wall-200   
+
+      cell_wall-contact_region_9-trg
+
+         Condition   Value      
+         --------------------
+                     wall-199   
+
+</BoundaryConditions>
+
+<SolverSettings>
+Solver Settings
+---------------
+
+   Equations
+
+      Equation     Solved   
+      -------------------
+      Flow         yes      
+      Turbulence   yes      
+      Energy       yes      
+
+   Numerics
+
+      Numeric                         Enabled   
+      ---------------------------------------
+      Absolute Velocity Formulation   yes       
+
+   Unsteady Calculation Parameters
+
+                                       
+      ------------------------------
+      Number of Time Steps       100   
+      Time Step Size [s]         1     
+      Max Iterations/Time Step   20    
+
+   Under-Relaxation Factors
+
+      Variable                     Relaxation Factor   
+      ----------------------------------------------
+      Pressure                     0.3                 
+      Density                      1                   
+      Body Forces                  1                   
+      Momentum                     0.7                 
+      Turbulent Kinetic Energy     0.8                 
+      Turbulent Dissipation Rate   0.8                 
+      Turbulent Viscosity          1                   
+      Energy                       1                   
+
+   Linear Solver
+
+      Variable                     Solver Type   Termination Criterion   Residual Reduction Tolerance   
+      -----------------------------------------------------------------------------------------------
+      Pressure                     V-Cycle       0.1                                                    
+      X-Momentum                   Flexible      0.1                     0.7                            
+      Y-Momentum                   Flexible      0.1                     0.7                            
+      Z-Momentum                   Flexible      0.1                     0.7                            
+      Turbulent Kinetic Energy     Flexible      0.1                     0.7                            
+      Turbulent Dissipation Rate   Flexible      0.1                     0.7                            
+      Energy                       F-Cycle       0.1                                                    
+
+   Pressure-Velocity Coupling
+
+      Parameter   Value    
+      ------------------
+      Type        SIMPLE   
+
+   Discretization Scheme
+
+      Variable                     Scheme                
+      ------------------------------------------------
+      Pressure                     Second Order          
+      Momentum                     Second Order Upwind   
+      Turbulent Kinetic Energy     First Order Upwind    
+      Turbulent Dissipation Rate   First Order Upwind    
+      Energy                       Second Order Upwind   
+
+   Solution Limits
+
+      Quantity                                   Limit    
+      -------------------------------------------------
+      Minimum Absolute Pressure [Pa]             1        
+      Maximum Absolute Pressure [Pa]             5e+10    
+      Minimum Static Temperature [K]             1        
+      Maximum Static Temperature [K]             5000     
+      Minimum Turb. Kinetic Energy [m^2/s^2]     1e-14    
+      Minimum Turb. Dissipation Rate [m^2/s^3]   1e-20    
+      Maximum Turb. Viscosity Ratio              100000   
+
+</SolverSettings>
+
+</FluentXMLReport>
